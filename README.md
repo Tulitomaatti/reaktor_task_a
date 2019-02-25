@@ -1,7 +1,6 @@
 # Reaktor summer job application task
 
 * "Sovellus, jonka avulla käyttäjät pääsevät helposti perehtymään hiilidioksidipäästöjen kehittymiseen viimeisten vuosien aikana."
-* 
 
 ## Data 
 
