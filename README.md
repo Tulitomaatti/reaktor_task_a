@@ -16,12 +16,12 @@
 
 ## Feature suggestions: 
 
-[ ] CO2 per capita
-[ ] Sorting 
-[ ] Hilight superpowers vs. other countries 
+- [ ] CO2 per capita
+- [ ] Sorting 
+- [ ] Hilight superpowers vs. other countries 
 -> Multiple series simulatenously, possible aggregates. 
 
-[ ] Time range selector 
+- [ ] Time range selector 
 
 ## UI
 
