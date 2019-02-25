@@ -15,12 +15,9 @@
 * Minimize active maintenance tasks (e.g. data updates)
 
 ## Feature suggestions: 
-
-- [ ] CO2 per capita
+- [ ] CO2 per capita. (= some mode selector.)
 - [ ] Sorting 
-- [ ] Hilight superpowers vs. other countries 
--> Multiple series simulatenously, possible aggregates. 
-
+- [ ] Hilight superpowers vs. other countries (= multiple series displayed simulatenously).
 - [ ] Time range selector 
 
 ## UI
