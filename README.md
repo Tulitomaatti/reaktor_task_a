@@ -18,7 +18,6 @@
 - [ ] CO2 per capita. (= some mode selector.)
 - [ ] Sorting 
 - [ ] Hilight superpowers vs. other countries (= multiple series displayed simulatenously).
-- [ ] Time range selector 
 
 ## UI
 
@@ -32,3 +31,14 @@ Title, searchbox, graph.
 Sounds like setting up a time series database (influxdb?) with a Grafana(-like) front sounds like a good idea on the long run.
  
 A nice CSV parser coupled with a plotting library (plotly?) and something to handle data nicely (numpy, scipy, pandas?) would be the relevant choice here. Dash came up when googling for plotting and dashboards. 
+
+
+## TODO
+
+- [x] Fetch data
+- [x] Parse data into a sensible structure
+- [ ] Figure out how to draw a plot
+ Plotly/Dash seems like a nice thing to build this on. 
+- [ ] Figure out how to make a search box
+- [ ] Make plot interactive
+- [ ] Timescale slider
