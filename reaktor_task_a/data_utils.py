@@ -40,7 +40,7 @@ def fetch_data(url_timeout = 10):
 
             if f.filename.find("API_") == 0 and ".csv" in f.filename:
                 fp = data_archives[t].open(f.filename, 'r')
-                data[t] = pd.read_csv(fp, header=5) # Would 5 be ok for other datasets?
+                data[t] = pd.read_csv(fp, header=1) # Would 1 be ok for other datasets?
                 fp.close()
 
             elif "Metadata_Country_" in f.filename and ".csv" in f.filename:
