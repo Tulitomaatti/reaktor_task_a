@@ -16,7 +16,7 @@ setup(
     url='https://github.com/Tulitomaatti/reaktor_task_a',
     download_url='https://github.com/Tulitomaatti/reaktor_task_a',
     author_email='eetu.lampsijarvi@helsinki.fi',
-    version='0.1dev',
+    version='0.1',
     install_requires=['dash', 'plotly', 'numpy', 'pandas'],
     packages=['reaktor_task_a'],
     scripts=[''],
