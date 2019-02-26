@@ -2,6 +2,12 @@
 
 * "Sovellus, jonka avulla käyttäjät pääsevät helposti perehtymään hiilidioksidipäästöjen kehittymiseen viimeisten vuosien aikana."
 
+## Afterthoughts
+
+Nice intro to Dash/Plot.ly and Heroku. The implementation is largely based on reading Dash and Plot.ly documentation and adapting them to build a CO2 emission explorer app. 
+
+The specifications also ask for an API to fetch data from the app in order to implement future UI's. This feels a bit out of place, as most of the app is about extracting the data from an already working API at World Bank. On the other hand setting up a database for this seems a bit overkill as well. Building functionality to access cleaned data via Flask might be one answer, but even that feels like reinventing the wheel, a wheel that's worse than existing solutions.  
+
 ## Data 
 
 * CSV: http://api.worldbank.org/v2/en/indicator/SP.POP.TOTL?downloadformat=csv 
@@ -14,9 +20,9 @@
 * Minimize active maintenance tasks (e.g. data updates)
 
 ## Feature suggestions: 
-- [ ] CO2 per capita. (= some mode selector.)
+- [x] CO2 per capita. (= some mode selector.)
 - [ ] Sorting 
-- [ ] Hilight superpowers vs. other countries (= multiple series displayed simulatenously).
+- [x] Hilight superpowers vs. other countries (= multiple series displayed simulatenously).
 
 ## UI
 
@@ -31,7 +37,6 @@ Sounds like setting up a time series database (influxdb?) with a Grafana(-like) 
  
 A nice CSV parser coupled with a plotting library (plotly?) and something to handle data nicely (numpy, scipy, pandas?) would be the relevant choice here. Dash came up when googling for plotting and dashboards. 
 
-
 ## TODO
 
 - [x] Fetch data
@@ -42,5 +47,5 @@ A nice CSV parser coupled with a plotting library (plotly?) and something to han
 - [x] Timescale slider
 - [x] Add plotting features: stacking, diffs, per capita.
 - [x] Tidy up layout
-- [ ] Package and test
-- [ ] Finish application. 
+- [x] Package and test
+- [x] Finish application. 
