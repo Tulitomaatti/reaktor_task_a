@@ -8,6 +8,8 @@ Nice intro to Dash/Plot.ly and Heroku. The implementation is largely based on re
 
 The specifications also ask for an API to fetch data from the app in order to implement future UI's. This feels a bit out of place, as most of the app is about extracting the data from an already working API at World Bank. On the other hand setting up a database for this seems a bit overkill as well. Building functionality to access cleaned data via Flask might be one answer, but even that feels like reinventing the wheel, a wheel that's worse than existing solutions.  
 
+The current application fetches fresh data from World Bank when started up; a restart every year or so should keep the data up to date, given that World Bank does not change the format they server data in. 
+
 ## Data 
 
 * CSV: http://api.worldbank.org/v2/en/indicator/SP.POP.TOTL?downloadformat=csv 
