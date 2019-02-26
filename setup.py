@@ -9,7 +9,7 @@ with open("README.md", "r") as fh:
     long_desc = fh.read()
 
 setup(
-    description='Data viewing tool thingy',
+    description='CO2 Emission explorer sample app',
     long_description=long_desc,
     long_description_content_type="text/markdown",
     author='Eetu Lampsijärvi',
