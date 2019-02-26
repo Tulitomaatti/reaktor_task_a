@@ -41,7 +41,6 @@ A nice CSV parser coupled with a plotting library (plotly?) and something to han
 - [x] Make plot interactive
 - [x] Timescale slider
 - [x] Add plotting features: stacking, diffs, per capita.
-- [ ] Add linear fit prediction
 - [ ] Tidy up layout
 - [ ] Package and test
 - [ ] Finish application. 

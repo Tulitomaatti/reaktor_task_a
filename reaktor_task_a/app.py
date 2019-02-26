@@ -2,6 +2,7 @@ import dash
 import dash_core_components as dcc
 import dash_html_components as html
 from dash.dependencies import Input, Output, State
+import plotly.graph_objs as go
 
 from reaktor_task_a import data_utils
 
@@ -29,11 +30,10 @@ app = dash.Dash(__name__)
 app.layout = html.Div(children=[
     html.H1(children="CO2 Emission Explorer"),
     html.Div([
-        html.Label('Select countries or groups to compare:'),
+        html.Label('Select countries or groups to compare, and select additional display options using the checkboxes.'),
         dcc.Dropdown(
             id='country_selector',
             options=get_countries(data[ds]),
-            # EUU EAS NAC LDC MIC
             value=['EUU', 'EAS', 'NAC', 'MIC', 'LDC', 'FIN'],
             multi=True
         ),
@@ -44,28 +44,27 @@ app.layout = html.Div(children=[
                 {'label': 'Show values per capita ', 'value': 'percapita_on'},
                 {'label': 'Show yearly change ', 'value': 'diffs_on'},
                 {'label': 'Stack selected countries or groups ', 'value': 'stacked_on'},
-                {'label': 'Linear prediction', 'value': 'prediction_on'}
             ],
             values=['percapita_on'],
         ),
     ]),
-
+    html.P(),
     dcc.Graph(
         id='co2graph',
         figure={
             'layout': {
-                'title': 'Graph title placeholder',
+                'title': '',
                 'xaxis': {
-                    'rangeslider': dict(visible=True),
+                    'rangeslider': dict(visible=True, step=1),
                     'range': [1980, 2014]  # Set initial range
                 },
-                'yaxis': {
-                    'title': 'CO2 Emissions (kg)'
-                },
-                'showlegend': True
+                'showlegend': True,
+                'margin': go.layout.Margin(t=30, b=0),
             }
         }
-    )
+    ),
+    html.P(children="Use the slider above to select a time range to inspect."),
+    html.Div(children="Data source: The World Bank Indicators API / EN.ATM.CO2E.KT & SP.POP:TOTL")
 ])
 
 
@@ -88,7 +87,7 @@ def update_fig(selected_countries, option_checks, figure):
         # TODO: Make options to enums?
         if 'percapita_on' in option_checks:
             country_popdata = data['pop'].loc[(slice(None), country), data['pop'].columns[2]:data['pop'].columns[-6]]
-            country_data = country_data / country_popdata * 1000000  # Convert to tonnes
+            country_data = country_data / country_popdata * 1000000  # Convert to kg
             title = 'CO2 Emissions per capita per year'
             ytitle = 'kg of CO2'
 
@@ -103,18 +102,15 @@ def update_fig(selected_countries, option_checks, figure):
         x = [int(yearstr) for yearstr in list(country_data)]
         y = country_data.to_numpy().squeeze().tolist()
 
-        series.append({'x': x, 'y': y, 'type': 'line', 'name': country})
+        series.append({'x': x, 'y': y, 'mode': 'lines+markers', 'name': country})
         if 'stacked_on' in option_checks:
             series[-1]['stackgroup'] = 'one'
-
 
     if 'diffs_on' in option_checks:
         title = 'Change of ' + title
 
     figure['layout']['title'] = title
     figure['layout']['yaxis']['title'] = ytitle
-
-
 
     return {
         'data': series,
@@ -123,4 +119,4 @@ def update_fig(selected_countries, option_checks, figure):
 
 
 if __name__ == '__main__':
-    app.run_server(debug=True)
+    app.run_server(debug=False)

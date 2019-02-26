@@ -17,7 +17,7 @@ setup(
     download_url='https://github.com/Tulitomaatti/reaktor_task_a',
     author_email='eetu.lampsijarvi@helsinki.fi',
     version='0.1dev',
-    install_requires=['nose, dash, numpy, pandas'],
+    install_requires=['nose, dash, plotly, numpy, pandas'],
     packages=['reaktor_task_a'],
     scripts=[''],
     name='reaktor_task_a',
