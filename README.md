@@ -36,8 +36,12 @@ A nice CSV parser coupled with a plotting library (plotly?) and something to han
 
 - [x] Fetch data
 - [x] Parse data into a sensible structure
-- [ ] Figure out how to draw a plot
- Plotly/Dash seems like a nice thing to build this on. 
-- [ ] Figure out how to make a search box
-- [ ] Make plot interactive
+- [x] Figure out how to draw a plot
+- [x] Figure out how to make a search box
+- [x] Make plot interactive
 - [ ] Timescale slider
+- [ ] Add plotting features: stacking, diffs, per capita.
+- [ ] Add linear fit prediction
+- [ ] Tidy up layout
+- [ ] Package and test
+- [ ] Finish application. 
