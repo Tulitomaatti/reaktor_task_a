@@ -4,11 +4,11 @@ import dash_html_components as html
 from dash.dependencies import Input, Output, State
 import plotly.graph_objs as go
 
-from reaktor_task_a import data_utils
+from reaktor_task_a import datautils
 
 
 # Init global data
-data, metadata = data_utils.fetch_data(10)
+data, metadata = datautils.fetch_data(10)
 ds = 'co2'
 
 data[ds].set_index(['Country Name', 'Country Code'], inplace=True)
@@ -59,6 +59,7 @@ app.layout = html.Div(children=[
                     'rangeslider': dict(visible=True, step=1),
                     'range': [1980, 2014]  # Set initial range
                 },
+                'yaxis': {},
                 'showlegend': True,
                 'margin': go.layout.Margin(t=30, b=0),
             }

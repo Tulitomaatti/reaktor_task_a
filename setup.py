@@ -19,7 +19,6 @@ setup(
     version='0.1',
     install_requires=['dash', 'plotly', 'numpy', 'pandas', 'gunicorn'],
     packages=['reaktor_task_a'],
-    scripts=[''],
     name='reaktor_task_a',
     classifiers=[
         "Programming Language :: Python :: 2",
