@@ -26,6 +26,7 @@ def get_countries(df):
 # Define a plot.ly/Dash application layout
 
 app = dash.Dash(__name__)
+server = app.server
 
 app.layout = html.Div(children=[
     html.H1(children="CO2 Emission Explorer"),
